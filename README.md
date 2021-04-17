@@ -14,7 +14,7 @@ Start the cluster:
 
 ```sh
 $ minikube start --memory 8192 --cpus 4
-$ minikube dashboard
+$ minikube dashboard &
 ```
 
  If execute other machine access dashboard, enable proxy and execute background
@@ -53,3 +53,34 @@ $ echo "$(minikube ip) spark-kubernetes" | sudo tee -a /etc/hosts
 ```
 
 Test it out in the browser at [http://spark-kubernetes/](http://spark-kubernetes/).
+
+
+## How to Test
+
+To test, run the PySpark shell from the the master container:
+
+```sh
+$ kubectl get pods
+$ kubectl exec spark-master-7bc769c685-q8tnn -it -- pyspark
+```
+
+Then run the following code after the PySpark prompt appears:
+
+```
+words = 'the quick brown fox jumps over the\
+        lazy dog the quick brown fox jumps over the lazy dog'
+sc = SparkContext()
+seq = words.split()
+data = sc.parallelize(seq)
+counts = data.map(lambda word: (word, 1)).reduceByKey(lambda a, b: a + b).collect()
+dict(counts)
+sc.stop()
+```
+
+You should see:
+
+```
+{'brown': 2, 'lazy': 2, 'over': 2, 'fox': 2, 'dog': 2, 'quick': 2, 'the': 4, 'jumps': 2}
+```
+
+
