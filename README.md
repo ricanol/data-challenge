@@ -16,14 +16,16 @@ Start the cluster:
 $ minikube start --memory 8192 --cpus 4
 $ minikube dashboard
 ```
-    # If execute other machine access dashboard, enable proxy and execute background
-    ```sh
-    $ kubectl proxy --address='0.0.0.0' --disable-filter=true &
-    ```
-    Access:
-    ```sh
-    http://<EXTERNAL IP>:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/
-    ```
+
+ If execute other machine access dashboard, enable proxy and execute background
+```sh
+$ kubectl proxy --address='0.0.0.0' --disable-filter=true &
+```
+
+Access:
+```sh
+http://<EXTERNAL IP>:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/
+```
 
 # Configure Docker expecific
 Build the Docker image:
