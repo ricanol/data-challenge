@@ -19,7 +19,7 @@ spec:
           command: ["/spark-worker"]
           ports:
             - containerPort: 8081 #Web UI
-            #- containerPort: 0 #randon port Schedule executors
+            - containerPort: -1 #randon port Schedule executors
           resources:
             requests:
               memory: "900m"
