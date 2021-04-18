@@ -1,5 +1,5 @@
 # base image
-FROM java:openjdk-8-jdk
+FROM openjdk:11-jre-slim
 
 # define spark and hadoop versions
 ENV SPARK_VERSION=3.0.0
