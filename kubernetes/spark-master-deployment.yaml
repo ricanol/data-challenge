@@ -18,8 +18,9 @@ spec:
           image: data-stone:ricardo
           command: ["/spark-master"]
           ports:
-            - containerPort: 7077
-            - containerPort: 8080
+            - containerPort: 7077 #Submit job to cluster / Join cluster 
+            - containerPort: 8080 #Web UI
+            - containerPort: 6066 #Submit job to cluster via REST API
           resources:
             requests:
               memory: "900m"
