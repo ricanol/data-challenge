@@ -1,8 +1,8 @@
 kind: Service
 apiVersion: v1
-namespace: ricardo
 metadata:
   name: spark-master
+  namespace: ricardo
 spec:
   ports:
     - name: webui
