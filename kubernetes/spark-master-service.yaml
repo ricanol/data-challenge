@@ -11,5 +11,8 @@ spec:
     - name: spark
       port: 7077
       targetPort: 7077
+    - name: REST_API
+      port: 6066
+      targetPort: 6066
   selector:
     component: spark-master
