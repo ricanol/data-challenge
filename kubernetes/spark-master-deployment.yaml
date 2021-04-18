@@ -1,5 +1,6 @@
 kind: Deployment
 apiVersion: apps/v1
+namespace: ricardo
 metadata:
   name: spark-master
 spec:

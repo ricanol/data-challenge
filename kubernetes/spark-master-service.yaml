@@ -1,5 +1,6 @@
 kind: Service
 apiVersion: v1
+namespace: ricardo
 metadata:
   name: spark-master
 spec:

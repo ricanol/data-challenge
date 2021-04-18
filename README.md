@@ -39,6 +39,7 @@ $ docker build -t data-stone:ricardo -f ./docker/Dockerfile ./docker
 Create the deployments and services:
 
 ```sh
+$ kubectl create -f ./kubernetes/namespace.yaml
 $ kubectl create -f ./kubernetes/spark-master-deployment.yaml
 $ kubectl create -f ./kubernetes/spark-master-service.yaml
 $ kubectl create -f ./kubernetes/spark-worker-deployment.yaml
