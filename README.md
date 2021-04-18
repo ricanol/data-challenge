@@ -61,8 +61,8 @@ Test it out in the browser at [http://spark-kubernetes/](http://spark-kubernetes
 To test, run the PySpark shell from the the master container:
 
 ```sh
-$ kubectl get pods
-$ kubectl exec spark-master-7bc769c685-q8tnn -it -- pyspark
+$ kubectl get pods --namespace ricardo
+$ kubectl exec spark-master-7bc769c685-q8tnn --namespace ricardo -it -- pyspark
 ```
 
 Then run the following code after the PySpark prompt appears:
