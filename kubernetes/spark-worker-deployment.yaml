@@ -18,8 +18,8 @@ spec:
           command: ["/spark-worker"]
           resources:
             requests:
-              memory: "1Gi"
+              memory: "900m"
               cpu: "900m"
             limits:
-              memory: "900Mi"
+              memory: "1Gi"
               cpu: "1"
