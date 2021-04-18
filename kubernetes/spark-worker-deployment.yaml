@@ -17,6 +17,8 @@ spec:
         - name: spark-worker
           image: data-stone:ricardo
           command: ["/spark-worker"]
+          ports:
+            - containerPort: 7337 #randon port Schedule executors
           resources:
             requests:
               memory: "900m"

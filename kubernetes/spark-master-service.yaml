@@ -14,5 +14,8 @@ spec:
     - name: REST_API
       port: 6066
       targetPort: 6066
+    - name: random
+      port: 7337
+      targetPort: 7337
   selector:
     component: spark-master
